@@ -1,0 +1,20 @@
+.ix-header{
+    height: 82px;
+    background: black;
+    padding: 16px;
+}
+
+.ix-header-text{
+    color: white;
+    margin: auto 0;
+}
+
+/* When the input is not focused */
+md-input-container label {
+    color: white;
+  }
+  
+  /* When the input is focused */
+  md-input-container.md-input-focused label {
+    color: white;
+  }

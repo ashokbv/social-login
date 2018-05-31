@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row ix-header">
+    <div class="col-md-2 ix-header-text">
+      <h2>InpodsX MIS</h2>
+    </div>
+    <div class="col-md-7"></div>
+    <div class="col-md-2">
+      <div *ngIf="authService.isUserLoggedIn()">
+        <form style="color: whitesmoke" class="ix-form">
+            <mat-form-field class="example-full-width">
+              <input type="text" placeholder="Institute" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+              <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                  {{ option }}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </form>
+        </div>          
+    </div>
+    <button *ngIf="authService.isUserLoggedIn()" (click)="logout()" class="col-md-1 btn btn-primary">Logout</button>
+  </div>
+</div>

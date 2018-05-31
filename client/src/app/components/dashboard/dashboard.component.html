@@ -1,0 +1,21 @@
+<mat-sidenav-container class="ix-container">
+  <mat-sidenav mode="side" opened>
+    <mat-nav-list>
+      <mat-list-item (click)="onRowClicked(0)"> Users </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item (click)="onRowClicked(1)"> Courses </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-divider [vertical]="true"></mat-divider>
+  <mat-sidenav-content class="ix-content">
+    <div *ngIf="isUserSelected==true" class="ix-user-content">
+      <google-chart [data]="enrollPIEChartData"></google-chart>
+      <google-chart [data]="verifiedPIEChartData"></google-chart>
+    </div>
+    <div *ngIf="isUserSelected==false" class="ix-course-content">
+
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="large" color="#fff" type="timer"></ngx-spinner>
